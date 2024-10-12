@@ -1,6 +1,12 @@
-## Getting Started
+# Alan Huynh Final project Programming Concept
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Info
+
+- Java JDK: 21.0.4
+- "IDE": Cursor
+- OS: Fedora 40
+
+I should have written a `.gitignore` :(
 
 ## Folder Structure
 

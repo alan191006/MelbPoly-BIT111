@@ -8,6 +8,8 @@
 
 import javax.swing.SwingUtilities;
 
+// The "main" file (__main__ in python)
+// Basically it just display the GUI
 public class FoodApp {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {

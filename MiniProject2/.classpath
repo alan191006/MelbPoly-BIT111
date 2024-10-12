@@ -1,4 +1,3 @@
 <classpath>
     <classpathentry kind="lib" path="lib/stdlib.jar"/>
-    <!-- Other entries -->
 </classpath>

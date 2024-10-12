@@ -76,6 +76,9 @@ public class FileViewerGUI extends JFrame {
 
             java.util.List<String> lines = Files.readAllLines(Paths.get(fileName));
             for (int i = 0; i < lines.size(); i++) {
+                // Parse the result
+                // For the "writer" code refer to 
+                // FoodGUI line 148
                 String line = lines.get(i);
 
                 if (line.equals("|||")) {

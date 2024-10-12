@@ -11,12 +11,16 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import javax.swing.*;
 
+// This is the main interface
 public class FoodGUI extends JFrame {
     private JTextField nameField;
     private JTextField amountField;
     private JTextArea detailsArea;
+
+    // Don't ask me why I hardcode -_-
     private final String fileName = "food_intake_1557984.txt";
 
+    // Konsutorakuta- desu!!!
     public FoodGUI() {
         setupGUI();
     }
@@ -29,6 +33,7 @@ public class FoodGUI extends JFrame {
         
         // Set look and feel
         // It just me messing with Java :D
+        // Only affect the bottom panel on my machine :(
         try {
             UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
         } catch (Exception e) {  // It have a warning here :((
@@ -36,7 +41,7 @@ public class FoodGUI extends JFrame {
 
         }
 
-        // Create main panel with padding and background color
+        // Treat all following code as css :)
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
@@ -120,6 +125,7 @@ public class FoodGUI extends JFrame {
     }
 
     private void saveToFile() {
+        // Self explanatory
         if (nameField.getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(this, 
                 "Food name cannot be empty!", 
@@ -128,6 +134,8 @@ public class FoodGUI extends JFrame {
             return;
         }
         
+        // try() with () eqivalent to python's with()
+        // Basically auto destroy the thing declare in () when finish
         try (FileWriter fw = new FileWriter(fileName, true);
              BufferedWriter bw = new BufferedWriter(fw);
              PrintWriter out = new PrintWriter(bw)) {
@@ -140,6 +148,7 @@ public class FoodGUI extends JFrame {
             LocalDateTime now = LocalDateTime.now();
             String timestamp = now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
             
+            // ||| is new item
             out.println("|||");
             out.println(timestamp);
             out.println("||" + food.getName());
@@ -152,6 +161,8 @@ public class FoodGUI extends JFrame {
             nameField.setText("");
             amountField.setText("");
             detailsArea.setText("");
+
+            // Refocus on the name field after closing
             nameField.requestFocus();
             
         } catch (IOException e) {
@@ -162,6 +173,7 @@ public class FoodGUI extends JFrame {
         }
     }
     
+    // Call the FileViewerGUI to display the saved record
     private void viewRecords() {
         FileViewerGUI viewer = new FileViewerGUI(fileName);
         viewer.setVisible(true);
